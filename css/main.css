@@ -30,10 +30,14 @@ body {
     (100% - var(--container-width)) / 2 + var(--containet-padding)
   );
 }
-.container-leftt {
+.container-left {
   padding-right: calc(
     (100% - var(--container-width)) / 2 + var(--containet-padding)
   );
+}
+.block {
+  height: 200px;
+  background-color: darkseagreen;
 }
 
 /* header */
@@ -57,137 +61,268 @@ body {
   width: 100%;
   height: 96px;
   background-size: 100%;
-  background-image: url(/img/header/header-bottom.svg);
+  background-image: url(./../img/header/header-bottom.svg);
 }
 
 .header__top {
   margin-bottom: 86px;
 }
+
 .header__row {
-display: flex;
-}
-.header__content {
-  max-width: 592px;
-}
-.header__img {
-position: relative;
-flex-grow: 1;
-}
-.header__img img {
-    position: absolute;
-    top: -181px;
-    right: -87px;
-    max-width: unset;
-    width: 894px;
-    height: 940px;
+  display: flex;
 }
 
-/* NAV */
+.header__content {
+  max-width: 592px;
+  position: relative;
+  z-index: 1;
+}
+
+.header__img {
+  position: relative;
+  flex-grow: 1;
+}
+
+.header__img img {
+  position: absolute;
+  top: -181px;
+  right: -87px;
+
+  max-width: unset;
+  width: 894px;
+  height: 940px;
+
+  pointer-events: none;
+}
+
+/* Nav */
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 80px;
 }
+
 .nav__list {
   display: flex;
   column-gap: 80px;
   font-size: 15px;
   font-weight: 500;
 }
+
 .nav__list a {
   position: relative;
 }
+
 .nav__list a.active::after,
 .nav__list a:hover::after {
   content: "";
+
   position: absolute;
   left: 0;
   right: 10px;
   bottom: -6px;
+
   display: block;
+  /* width: 35px; */
   height: 4px;
   background-color: #c4c4c4;
   border-radius: 50px;
 }
+
+.nav__list.nav__list--footer a.active::after,
+.nav__list.nav__list--footer a:hover::after {
+  display: none;
+}
+
+.nav__list.nav__list--footer a.active,
+.nav__list.nav__list--footer a:hover {
+  color: var(--orange);
+}
+
 .nav__login {
   display: flex;
   align-items: center;
   column-gap: 25px;
+
   font-size: 15px;
   font-weight: 500;
 }
 
-/* LOGO */
+/* Logo */
+
 .logo {
   font-size: 20px;
-  font-weight: 700;
   color: #fff;
-}
-.logo a {
-  color: inherit;
-}
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 13px 44px;
-  font-size: 15px;
-  font-weight: 500;
-  background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%),
-    #ffffff;
-  border-radius: 100px;
-}
-.btn:hover {
-  color: rgb(225, 240, 128);
-  transition: color 0.2s ease-in;
-}
-.btn:active {
-  position: relative;
-  top: 1px;
+  font-weight: 700;
 }
 
-/* HEADER-CONTENT */
-.header__content {
-  max-width: 592px;
-  position: relative;
-  z-index: 1; /*определяет положение позиционированного элемента*/
+.logo a {
+  color: inherit !important;
 }
+
+.logo--footer {
+  color: var(--orange);
+}
+
+/* Header content */
+
 .header__badge {
   margin-bottom: 7px;
   display: inline-block;
-  font-weight: 500;
-  font-size: 18px;
   padding: 11px 30px;
+  font-size: 18px;
+  font-weight: 500;
+
   background: rgba(255, 255, 255, 0.25);
   border-radius: 15px;
 }
+
 .header__title {
   margin-bottom: 30px;
-  font-weight: 400;
   font-size: 55px;
-  line-height: 82px;
 }
+
 .header__text {
   margin-bottom: 68px;
-  font-weight: 700;
   font-size: 25px;
-  line-height: 38px;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.5);
 }
 .header__btn {
-  display: inline-block;
-  padding: 27px 47px;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 38px;
-  background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
-  border-radius: 27px;
+    display: inline-block;
+    padding: 27px 48px;
+    color: #fefefe;
+
+    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
+    border-radius: 27px;
+
+    font-size: 25px;
+    font-weight: 600;
 }
+
 .header__btn:hover {
-  color: rgb(225, 240, 128);
-  transition: color 0.2s ease-in;
+    color: rgb(221, 239, 66);
+    transition: color 0.2s ease-in; /*будет меняться плавно*/
 }
+
 .header__btn:active {
+    /*при нажатии утапливалась вниз эффект прожатия*/
+    position: relative;
+    top: 1px;
+}
+
+/* Destinations */
+
+.destinations {
+  overflow-x: hidden;
+  padding: 96px 0 100px;
+}
+
+.destinations__row {
+  display: flex;
+  column-gap: 50px;
+}
+
+.destinations__content {
+  max-width: 456px;
+}
+
+.destinations__slider {
+  width: 1110px;
+  flex-shrink: 0;
+}
+
+.destinations__title {
+  margin-bottom: 15px;
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.destinations__title span {
+  font-size: 30px;
+}
+
+.destinations__text {
+  margin-bottom: 60px;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--secondary);
+}
+.btn {
+    display: inline-block;
+    padding: 25px 45px;
+    color:#FEFEFE;
+
+    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
+    border-radius: 27px;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.btn:hover{
+    color: rgb(221, 239, 66);
+    transition: color 0.2s ease-in; /*будет меняться плавно*/
+}
+
+.btn:active{
+    /*при нажатии утапливалась вниз эффект прожатия*/
+    position: relative;
+    top: 1px;
+}
+
+/* Slider */
+
+.slider {
   position: relative;
-  top: 1px;
+  height: 456px;
+}
+
+.slider__item {
+  margin-top: 27px;
+
+  width: 335px;
+  height: 402px;
+  object-fit: cover;
+  border-radius: 35px;
+
+  transition: 0.2s ease-in;
+}
+
+.slider .center .slider__item {
+  margin-top: 0;
+  width: 380px;
+  height: 456px;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+
+  display: block;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%),
+    #8b8b8b;
+}
+
+.slider__btn--prev {
+  left: -27px;
+  padding-left: 26px;
+  justify-content: flex-start;
+}
+
+.slider__btn--next {
+  right: -27px;
+  padding-right: 26px;
+  justify-content: flex-end;
 }
