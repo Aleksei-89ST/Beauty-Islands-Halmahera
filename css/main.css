@@ -190,28 +190,6 @@ body {
   font-weight: 700;
   color: rgba(255, 255, 255, 0.5);
 }
-.header__btn {
-    display: inline-block;
-    padding: 27px 48px;
-    color: #fefefe;
-
-    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
-    border-radius: 27px;
-
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.header__btn:hover {
-    color: rgb(221, 239, 66);
-    transition: color 0.2s ease-in; /*будет меняться плавно*/
-}
-
-.header__btn:active {
-    /*при нажатии утапливалась вниз эффект прожатия*/
-    position: relative;
-    top: 1px;
-}
 
 /* Destinations */
 
@@ -249,28 +227,6 @@ body {
   font-size: 25px;
   font-weight: 500;
   color: var(--secondary);
-}
-.btn {
-    display: inline-block;
-    padding: 25px 45px;
-    color:#FEFEFE;
-
-    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
-    border-radius: 27px;
-
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.btn:hover{
-    color: rgb(221, 239, 66);
-    transition: color 0.2s ease-in; /*будет меняться плавно*/
-}
-
-.btn:active{
-    /*при нажатии утапливалась вниз эффект прожатия*/
-    position: relative;
-    top: 1px;
 }
 
 /* Slider */
@@ -326,3 +282,65 @@ body {
   padding-right: 26px;
   justify-content: flex-end;
 }
+
+/* CUSTOMERS */
+.customers {
+  padding: 100px 0 133px;
+}
+
+.customers__row {
+  display: flex;
+  column-gap: 68px;
+}
+.customers__img {
+  max-width: 478px;
+}
+.customers__img img {
+  border-radius: 60px;
+}
+
+.customers__title {
+  margin-bottom: 35px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 68px;
+}
+/* REVIEW */
+
+.review {
+  max-width: 490px;
+}
+.review__client {
+  display: flex;
+  align-items: center;
+  column-gap: 33px;
+  margin-bottom: 60px;
+}
+.review__client-avatar {
+  overflow: hidden;
+  width: 134px;
+  height: 134px;
+  background-color: #ff794e;
+  border-radius: 50%;
+}
+
+.review__client-desc-name {
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 33px;
+  line-height: 50px;
+}
+.review__client-desc-country {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 38px;
+  color: var(--secondary);
+}
+.review__text {
+  margin-bottom: 30px;
+  color: var(--secondary);
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 500;
+}
+
