@@ -18,7 +18,27 @@ body {
 .none {
   display: none !important;
 }
+.btn {
+  width: 225px;
+  height: 79px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 25px 54px;
+  background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
+  border-radius: 27px;
+  color: #fff;
+}
+.btn:hover {
+  color: rgb(221, 239, 66);
+  transition: color 0.2s ease-in; /*будет меняться плавно*/
+}
 
+.btn:active {
+  /*при нажатии утапливалась вниз эффект прожатия*/
+  position: relative;
+  top: 1px;
+}
 .container {
   max-width: var(--container-width);
   padding: 0 var(--containet-padding);
@@ -34,10 +54,6 @@ body {
   padding-right: calc(
     (100% - var(--container-width)) / 2 + var(--containet-padding)
   );
-}
-.block {
-  height: 200px;
-  background-color: darkseagreen;
 }
 
 /* header */
@@ -343,4 +359,50 @@ body {
   line-height: 33px;
   font-weight: 500;
 }
+/* CTA */
+.cta {
+  padding: 100px 0;
+}
 
+.cta__plate {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 580px;
+  background-color: #fff;
+  border-radius: 60px;
+  padding: 40px 15px;
+}
+.cta__plate::before,
+.cta__plate::after {
+  position: absolute;
+  width: 63px;
+  height: 83px;
+  content: "";
+}
+
+.cta__plate::before {
+  top: 74px;
+  right: 80px;
+  background-image: url(../img/cta/cta-el-01.svg);
+}
+.cta__plate::after {
+  left: 63px;
+  bottom: 83px;
+  background-image: url(../img/cta/cta-el-02.svg);
+}
+.cta__title {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 68px;
+  margin-bottom: 30px;
+}
+.cta__text {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  color: var(--secondary);
+  margin-bottom: 60px;
+}
