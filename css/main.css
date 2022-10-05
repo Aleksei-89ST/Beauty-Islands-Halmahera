@@ -238,6 +238,10 @@ body {
 }
 
 /* Slider */
+.owl-item {
+	display: flex;
+	justify-content: center;
+}
 
 .slider {
   position: relative;
@@ -561,11 +565,17 @@ body {
 }
 
 @media (max-width: 1000px) {
-  .nav__list {
+  .nav__list--header {
     display: none;
   }
-  .nav__login {
+  .nav__login--header {
     display: none;
+  }
+  .nav {
+    column-gap: 50px;
+  }
+  .nav__list {
+    column-gap: 50px;
   }
   .nav__toggle {
     display: block;
@@ -714,14 +724,20 @@ body {
     border-radius: 20px;
     font-size: 18px;
   }
+  .btn--login {
+    padding: 13px 44px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 100px;
+  }
   /* customers  */
   .customers {
     padding: 50px 0 60px;
   }
   .customers__row {
-    flex-direction: column-reverse;
-    row-gap: 30px;
+	column-gap: 30px;
   }
+
   .customers__title {
     margin-bottom: 25px;
     font-size: 35px;
@@ -749,10 +765,83 @@ body {
     max-width: 200px;
   }
   .customers__img img {
-    max-width: 300px;
+    max-width: 250px;
     border-radius: 40px;
   }
+  /* CTA */
+  .cta {
+    padding: 50px 0;
+  }
+  .cta__title {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+  .cta__text {
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+  .cta__plate {
+    min-height: 380px;
+    padding: 20px 15px;
+    border-radius: 40px;
+  }
+  /* subscribe */
+  .subscribe {
+    padding: 25px 0 30px;
+  }
+  .subscribe__title {
+    margin-bottom: 30px;
+    font-size: 35px;
+  }
+  .subscribe-form {
+	padding: 10px 10px 10px 20px;
+	border-radius: 25px;
+	column-gap: 10px;
+  }
+  .subscribe-form__input {
+font-size: 20px;
+  }
+  /* FOOTER */
+  .nav__login--footer {
+    display: none;
+  }
 }
+@media (max-width: 640px) {
+	.customers__row {
+		flex-direction: column-reverse;
+		row-gap: 30px;
+	  }
+}
+
+@media (max-width: 600px) {
+	.nav--footer {
+		flex-direction: column-reverse;
+		row-gap: 30px;
+	}
+}
+@media (max-width: 460px) {
+	.customers__img img {
+		max-width: 100%;
+	}
+	.subscribe-form {
+		padding: 10px;
+		flex-direction: column;
+		row-gap: 10px;
+	}
+	.subscribe-form__input {
+		padding: 15px 0;
+		text-align: center;
+		background-color:gainsboro;
+		border-radius: 20px;
+		font-size: 18px;
+	}
+	.nav__list--footer {
+		flex-direction: column;
+		row-gap: 15px;
+		align-items: center;
+	}
+}
+
 @media (max-width: 460px) {
   .nav--mobile .nav__toggle {
     top: 20px;
