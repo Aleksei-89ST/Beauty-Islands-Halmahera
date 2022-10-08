@@ -1,5 +1,5 @@
-# Beauty-Islands-Halmahera![header]
-Адаптивная мобильная верстка HTML CSS JS. FlexBox, формы, карусель.
+# Beauty-Islands-Halmahera
+Адаптивная и мобильный сайт на HTML CSS JS. FlexBox, формы, карусель.
 
 ![header](https://user-images.githubusercontent.com/90722666/194079740-abcb2242-bd7d-4380-a0ff-27a8464f6bbb.png)
 ![desc](https://user-images.githubusercontent.com/90722666/194079088-725aaebc-5a12-41aa-a2d6-870ba8510f97.png)
